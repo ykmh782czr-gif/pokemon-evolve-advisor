@@ -230,8 +230,8 @@
     if (!p) return;
     els.search.value = p.name;
     els.resultsList.innerHTML = "";
-    els.emptyState.hidden = true;
-    els.detailContent.hidden = false;
+    els.emptyState.style.display = "none";
+    els.detailContent.style.display = "block";;
     renderCurrent(p);
     renderVerdict(p, childrenById.get(id));
   }
