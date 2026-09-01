@@ -236,7 +236,7 @@
     renderVerdict(p, childrenById.get(id));
   }
 
-  fetch("data/pokemon.json")
+  fetch("pokemon.json")
     .then((r) => r.json())
     .then(init)
     .catch((err) => {
