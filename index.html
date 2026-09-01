@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Should I Evolve This Pokémon?</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Should I evolve this Pokémon?</h1>
+  <p class="tagline">Pick a Pokémon and see what changes if it evolves.</p>
+</header>
+
+<main class="layout">
+
+  <section class="panel search-panel" aria-label="Choose a Pokémon">
+    <label for="search" class="visually-hidden">Search Pokémon</label>
+    <input
+      type="text"
+      id="search"
+      class="search-input"
+      placeholder="Search a Pokémon, e.g. charmander"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <div id="resultsList" class="results-list" role="listbox" aria-label="Search results"></div>
+  </section>
+
+  <section class="panel detail-panel" id="detailPanel" aria-live="polite">
+    <div class="empty-state" id="emptyState">
+      <p>Nothing selected yet.</p>
+      <p class="empty-sub">Search for a Pokémon on the left to get a verdict.</p>
+    </div>
+
+    <div class="detail-content" id="detailContent" hidden>
+
+      <div class="current-card">
+        <img id="curImg" class="mon-img" alt="" width="120" height="120" />
+        <div class="current-info">
+          <h2 id="curName"></h2>
+          <div class="type-badges" id="curTypes"></div>
+          <dl class="stat-list" id="curStats"></dl>
+        </div>
+      </div>
+
+      <div class="verdict-block" id="verdictBlock">
+        <div class="verdict-tag" id="verdictTag"></div>
+        <p class="verdict-text" id="verdictText"></p>
+      </div>
+
+      <div class="options-block" id="optionsBlock" hidden>
+        <h3 id="optionsHeading">Evolution options</h3>
+        <div class="evo-options" id="evoOptions"></div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Base stat data only — this is a stat-driven estimate, not full game logic (movesets, held items or evolution methods aren't factored in).</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
